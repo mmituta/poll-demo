@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AddOptionComponent } from './add-option.component';
 import { FormsModule } from '@angular/forms';
+import { Option } from '../../option';
 
 describe('Tests for add option component', () => {
   let component: AddOptionComponent;
@@ -40,7 +41,7 @@ describe('Tests for add option component', () => {
 
     button.click();
 
-    expect(component.optionCreated.emit).toHaveBeenCalledWith('Option name');
+    expect(component.optionCreated.emit).toHaveBeenCalledWith(new Option('Option name'));
   });
 
   it(
