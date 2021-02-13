@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LimitedValueLengthDirective } from './limited-value-length-directive';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [LimitedValueLengthDirective],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[LimitedValueLengthDirective]
 })
 export class SharedModule { }
