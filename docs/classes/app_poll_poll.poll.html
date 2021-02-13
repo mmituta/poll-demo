@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AppComponent | poll-demo</title>
+	<title>Poll | poll-demo</title>
 	<meta name="description" content="Documentation for poll-demo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">poll-demo</a>
 				</li>
 				<li>
-					<a href="../modules/app_app_component.html">app/app.component</a>
+					<a href="../modules/app_poll_poll.html">app/poll/poll</a>
 				</li>
 				<li>
-					<a href="app_app_component.appcomponent.html">AppComponent</a>
+					<a href="app_poll_poll.poll.html">Poll</a>
 				</li>
 			</ul>
-			<h1>Class AppComponent</h1>
+			<h1>Class Poll</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AppComponent</span>
+						<span class="target">Poll</span>
 					</li>
 				</ul>
 			</section>
@@ -83,13 +83,20 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="app_app_component.appcomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="app_poll_poll.poll.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_app_component.appcomponent.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_poll_poll.poll.html#options" class="tsd-kind-icon">options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_poll_poll.poll.html#title" class="tsd-kind-icon">title</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app_poll_poll.poll.html#addoption" class="tsd-kind-icon">add<wbr>Option</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,13 +108,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>App<wbr>Component<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="app_app_component.appcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AppComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Poll<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="app_poll_poll.poll.html" class="tsd-signature-type" data-tsd-kind="Class">Poll</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="app_app_component.appcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AppComponent</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="app_poll_poll.poll.html" class="tsd-signature-type" data-tsd-kind="Class">Poll</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -115,14 +122,50 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;poll-demo&#x27;</span></div>
+					<a name="options" class="tsd-anchor"></a>
+					<h3>options</h3>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="app_poll_option.option.html" class="tsd-signature-type" data-tsd-kind="Class">Option</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/a9b5605/src/app/app.component.ts#L9">app/app.component.ts:9</a></li>
+							<li>Defined in app/poll/poll.ts:4</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/poll/poll.ts:3</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addoption" class="tsd-anchor"></a>
+					<h3>add<wbr>Option</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Option<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/poll/poll.ts:6</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -132,7 +175,7 @@
 					<li class=" ">
 						<a href="../modules.html">Exports</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/app_app_component.html">app/app.component</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -144,7 +187,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/app_poll_option.html">app/poll/option</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/app_poll_poll.html">app/poll/poll</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -199,13 +242,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="app_app_component.appcomponent.html" class="tsd-kind-icon">App<wbr>Component</a>
+						<a href="app_poll_poll.poll.html" class="tsd-kind-icon">Poll</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="app_app_component.appcomponent.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="app_poll_poll.poll.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="app_app_component.appcomponent.html#title" class="tsd-kind-icon">title</a>
+								<a href="app_poll_poll.poll.html#options" class="tsd-kind-icon">options</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="app_poll_poll.poll.html#title" class="tsd-kind-icon">title</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="app_poll_poll.poll.html#addoption" class="tsd-kind-icon">add<wbr>Option</a>
 							</li>
 						</ul>
 					</li>
@@ -224,6 +273,7 @@
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>

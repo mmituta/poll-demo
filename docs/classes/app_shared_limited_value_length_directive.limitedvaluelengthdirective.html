@@ -74,7 +74,7 @@
 						<p>This directive disables the input element if its values is longer than the limit configured by the
 							<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#limit">limit</a> input property.
 							<br/>
-						By default the limit is set to 80 characters of length</p>
+						By default the limit is set to 80 characters of length.</p>
 					</div>
 				</div>
 			</section>
@@ -106,7 +106,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#onchange" class="tsd-kind-icon">on<wbr>Change</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#disableelementifvalueisoverthelimit" class="tsd-kind-icon">disable<wbr>Element<wbr>IfValue<wbr>IsOver<wbr>The<wbr>Limit</a></li>
 							</ul>
 						</section>
 					</div>
@@ -124,7 +124,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in app/shared/limited-value-length-directive.ts:16</li>
+									<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/a9b5605/src/app/shared/limited-value-length-directive.ts#L20">app/shared/limited-value-length-directive.ts:20</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -146,7 +146,7 @@
 					<div class="tsd-signature tsd-kind-icon">input<wbr>Element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLInputElement</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in app/shared/limited-value-length-directive.ts:16</li>
+							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/a9b5605/src/app/shared/limited-value-length-directive.ts#L20">app/shared/limited-value-length-directive.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -156,26 +156,37 @@
 					<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 80</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in app/shared/limited-value-length-directive.ts:14</li>
+							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/a9b5605/src/app/shared/limited-value-length-directive.ts#L18">app/shared/limited-value-length-directive.ts:18</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Defines the limit of value allowed by the directive.
+							If the value is longer than the limit, the element from which the value comes from will be disabled.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="onchange" class="tsd-anchor"></a>
-					<h3>on<wbr>Change</h3>
+					<a name="disableelementifvalueisoverthelimit" class="tsd-anchor"></a>
+					<h3>disable<wbr>Element<wbr>IfValue<wbr>IsOver<wbr>The<wbr>Limit</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Change<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">disable<wbr>Element<wbr>IfValue<wbr>IsOver<wbr>The<wbr>Limit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in app/shared/limited-value-length-directive.ts:22</li>
+									<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/a9b5605/src/app/shared/limited-value-length-directive.ts#L30">app/shared/limited-value-length-directive.ts:30</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Invoked when the value of the element is updated. It checks if the value is over the limit and disables the element if it is.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -192,10 +203,43 @@
 						<a href="../modules/app_app_component.html">app/app.component</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/app_app_component_spec.html">app/app.component.spec</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/app_app_module.html">app/app.module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_poll_option.html">app/poll/option</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_poll_poll.html">app/poll/poll</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_poll_poll_definition_add_option_add_option_component.html">app/poll/poll-<wbr>definition/add-<wbr>option/add-<wbr>option.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_poll_poll_definition_add_option_add_option_component_spec.html">app/poll/poll-<wbr>definition/add-<wbr>option/add-<wbr>option.component.spec</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_poll_poll_definition_poll_definition_component.html">app/poll/poll-<wbr>definition/poll-<wbr>definition.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_poll_poll_definition_poll_definition_component_spec.html">app/poll/poll-<wbr>definition/poll-<wbr>definition.component.spec</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_poll_poll_module.html">app/poll/poll.module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_poll_poll_poll_component.html">app/poll/poll/poll.component</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_poll_poll_poll_component_spec.html">app/poll/poll/poll.component.spec</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/app_shared_limited_value_length_directive.html">app/shared/limited-<wbr>value-<wbr>length-<wbr>directive</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app_shared_limited_value_length_directive_spec.html">app/shared/limited-<wbr>value-<wbr>length-<wbr>directive.spec</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/app_shared_shared_module.html">app/shared/shared.module</a>
@@ -205,6 +249,15 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/environments_environment_prod.html">environments/environment.prod</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/main.html">main</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/polyfills.html">polyfills</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/test.html">test</a>
 					</li>
 				</ul>
 			</nav>
@@ -225,7 +278,7 @@
 								<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#limit" class="tsd-kind-icon">limit</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#onchange" class="tsd-kind-icon">on<wbr>Change</a>
+								<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#disableelementifvalueisoverthelimit" class="tsd-kind-icon">disable<wbr>Element<wbr>IfValue<wbr>IsOver<wbr>The<wbr>Limit</a>
 							</li>
 						</ul>
 					</li>

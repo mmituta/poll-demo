@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AppComponent | poll-demo</title>
+	<title>AddOptionComponent | poll-demo</title>
 	<meta name="description" content="Documentation for poll-demo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,24 +55,34 @@
 					<a href="../modules.html">poll-demo</a>
 				</li>
 				<li>
-					<a href="../modules/app_app_component.html">app/app.component</a>
+					<a href="../modules/app_poll_poll_definition_add_option_add_option_component.html">app/poll/poll-definition/add-option/add-option.component</a>
 				</li>
 				<li>
-					<a href="app_app_component.appcomponent.html">AppComponent</a>
+					<a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html">AddOptionComponent</a>
 				</li>
 			</ul>
-			<h1>Class AppComponent</h1>
+			<h1>Class AddOptionComponent</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This component is responsible for creating new poll options.
+							It doesn&#39;t have any inputs, and the only output is the text of the created option.
+							When the option is created, the event is emitted, and the component is reseted to its
+						initial state - it is ready for creating another option.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AppComponent</span>
+						<span class="target">AddOptionComponent</span>
 					</li>
 				</ul>
 			</section>
@@ -83,13 +93,20 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="app_app_component.appcomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_app_component.appcomponent.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html#optioncreated" class="tsd-kind-icon">option<wbr>Created</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html#optiontext" class="tsd-kind-icon">option<wbr>Text</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html#createoption" class="tsd-kind-icon">create<wbr>Option</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,13 +118,16 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>App<wbr>Component<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="app_app_component.appcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AppComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Add<wbr>Option<wbr>Component<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AddOptionComponent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/poll/poll-definition/add-option/add-option.component.ts:22</li>
+								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="app_app_component.appcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AppComponent</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AddOptionComponent</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -115,14 +135,55 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;poll-demo&#x27;</span></div>
+					<a name="optioncreated" class="tsd-anchor"></a>
+					<h3>option<wbr>Created</h3>
+					<div class="tsd-signature tsd-kind-icon">option<wbr>Created<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/a9b5605/src/app/app.component.ts#L9">app/app.component.ts:9</a></li>
+							<li>Defined in app/poll/poll-definition/add-option/add-option.component.ts:20</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Event that will be emitted the moment the option is  created. It contains the text of the created option.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="optiontext" class="tsd-anchor"></a>
+					<h3>option<wbr>Text</h3>
+					<div class="tsd-signature tsd-kind-icon">option<wbr>Text<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/poll/poll-definition/add-option/add-option.component.ts:22</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="createoption" class="tsd-anchor"></a>
+					<h3>create<wbr>Option</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Option<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/poll/poll-definition/add-option/add-option.component.ts:31</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>When called it will emit an event that contains the text of the option.
+									After the event is emitted, the component will be reverted to its initial state.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -132,7 +193,7 @@
 					<li class=" ">
 						<a href="../modules.html">Exports</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/app_app_component.html">app/app.component</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -147,7 +208,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/app_poll_poll.html">app/poll/poll</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/app_poll_poll_definition_add_option_add_option_component.html">app/poll/poll-<wbr>definition/add-<wbr>option/add-<wbr>option.component</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -199,13 +260,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="app_app_component.appcomponent.html" class="tsd-kind-icon">App<wbr>Component</a>
+						<a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html" class="tsd-kind-icon">Add<wbr>Option<wbr>Component</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="app_app_component.appcomponent.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="app_app_component.appcomponent.html#title" class="tsd-kind-icon">title</a>
+								<a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html#optioncreated" class="tsd-kind-icon">option<wbr>Created</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html#optiontext" class="tsd-kind-icon">option<wbr>Text</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="app_poll_poll_definition_add_option_add_option_component.addoptioncomponent.html#createoption" class="tsd-kind-icon">create<wbr>Option</a>
 							</li>
 						</ul>
 					</li>
@@ -224,6 +291,7 @@
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
