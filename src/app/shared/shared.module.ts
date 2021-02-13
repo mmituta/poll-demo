@@ -9,6 +9,6 @@ import { LimitedValueLengthDirective } from './limited-value-length-directive';
   imports: [
     CommonModule
   ],
-  exports:[LimitedValueLengthDirective]
+  exports:[LimitedValueLengthDirective, CommonModule]
 })
 export class SharedModule { }
