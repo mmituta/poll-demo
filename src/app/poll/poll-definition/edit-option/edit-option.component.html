@@ -1,1 +1,8 @@
-<input type="text" appLimitedLength  [(ngModel)]="option.text"/><button (click)="removeOption()">X</button>
+<div class="input-group mb-3">
+  <input
+    type="text"
+    appLimitedLength
+    class="form-control"
+    [(ngModel)]="option.text"
+  /><button class="btn btn-primary input-group-append" (click)="removeOption()">X</button>
+</div>

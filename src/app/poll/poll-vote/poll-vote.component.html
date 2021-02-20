@@ -1,16 +1,16 @@
 <div class="container">
   <p>{{ poll.title }}</p>
   <form (ngSubmit)="onSubmit()">
-    <span *ngFor="let option of poll.options; let i = index">
+    <div class="custom-control custom-radio" *ngFor="let option of poll.options; let i = index">
       <input
+      class="custom-control-input"
         [id]="'option-'+i"
         type="radio"
         [value]="option"
         [(ngModel)]="selectedOption"
         name="option"
       />
-      <label [for]="'option-'+i">{{ option.text }}</label></span
-    >
-    <button type="submit">Vote</button>
+      <label  class="custom-control-label"  [for]="'option-'+i">{{ option.text }}</label></div>
+    <button type="submit" class="btn btn-primary">Vote</button>
   </form>
 </div>

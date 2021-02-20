@@ -1,1 +1,10 @@
-<input type="text" appLimitedLength [(ngModel)]="optionText"/><button (click)="createOption()">Add</button>
+<div class="input-group mb-3">
+  <input
+    type="text"
+    appLimitedLength
+    class="form-control"
+    [(ngModel)]="optionText"
+  /><button class="btn btn-primary input-group-append" (click)="createOption()">
+    Add
+  </button>
+</div>
