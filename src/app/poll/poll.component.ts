@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Poll } from './poll';
 import { Option } from './option';
-import { PollResult } from './poll-results/poll-result';
 
 @Component({
   selector: 'app-poll',
