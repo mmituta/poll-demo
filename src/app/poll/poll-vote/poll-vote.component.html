@@ -1,0 +1,16 @@
+<div class="container">
+  <p>{{ poll.title }}</p>
+  <form (ngSubmit)="onSubmit()">
+    <span *ngFor="let option of poll.options; let i = index">
+      <input
+        [id]="'option-'+i"
+        type="radio"
+        [value]="option"
+        [(ngModel)]="selectedOption"
+        name="option"
+      />
+      <label [for]="'option-'+i">{{ option.text }}</label></span
+    >
+    <button type="submit">Vote</button>
+  </form>
+</div>

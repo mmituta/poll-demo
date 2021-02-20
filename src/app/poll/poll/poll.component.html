@@ -1,3 +1,4 @@
 <div class="container">
   <app-poll-definition [poll]="poll" [questionLimit]="questionLimit"></app-poll-definition>
+  <app-poll-vote [poll]="poll" (voteCasted)="onVote($event)"></app-poll-vote>
 </div>

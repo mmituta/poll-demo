@@ -6,11 +6,12 @@ import { SharedModule } from '../shared/shared.module';
 import { AddOptionComponent } from './poll-definition/add-option/add-option.component';
 import { FormsModule } from '@angular/forms';
 import { EditOptionComponent } from './poll-definition/edit-option/edit-option.component';
+import { PollVoteComponent } from './poll-vote/poll-vote.component';
 
 
 
 @NgModule({
-  declarations: [PollDefinitionComponent, PollComponent, AddOptionComponent, EditOptionComponent],
+  declarations: [PollDefinitionComponent, PollComponent, AddOptionComponent, EditOptionComponent, PollVoteComponent],
   imports: [
     SharedModule, FormsModule
   ],

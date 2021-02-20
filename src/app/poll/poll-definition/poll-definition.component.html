@@ -1,5 +1,5 @@
 <div class="container">
-  <input type="text" appLimitedLength />
+  <input type="text" appLimitedLength [(ngModel)]="poll.title"/>
   <div *ngFor="let option of poll.options"><app-edit-option [option]="option" (optionRemoved)="onOptionRemoved($event)"></app-edit-option></div>
   <app-add-option (optionCreated)="onOptionAdded($event)"></app-add-option>
   <div>{{poll.options.length}}/{{questionLimit}} possible answers <button>Reset</button></div>
