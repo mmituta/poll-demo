@@ -33,7 +33,7 @@ class VoteCount implements Result {
   constructor(private option: Option) {}
 
   public get name(): string {
-    return this.option.text;
+    return this.option.label;
   }
 
   public vote(): void {

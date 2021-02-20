@@ -40,10 +40,10 @@ describe('Tests for the edit option component', () => {
   });
 
   it('should change the name of the option', () => {
-    component.option.text = 'original value';
+    component.option.label = 'original value';
     inputText.value = 'new value';
     inputText.dispatchEvent(new Event('input'));
 
-    expect(component.option.text).toEqual('new value');
+    expect(component.option.label).toEqual('new value');
   });
 });

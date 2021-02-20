@@ -12,12 +12,10 @@ export class PollComponent {
   @Input()
   questionLimit = 10;
   poll: Poll = new Poll();
-  result: PollResult;
   constructor() {
-    this.result = new PollResult(this.poll);
   }
 
   public onVote(option: Option): void {
-    this.result.addVote(option);
+    this.poll.voteFor(option);
   }
 }
