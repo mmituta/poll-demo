@@ -1,4 +1,5 @@
 <div class="container">
+  <h2>Define</h2>
   <div class="form-group">
     <label for="poll-title">Title of the poll:</label>
     <input
@@ -12,7 +13,7 @@
 
   </div>
   <div class="form-group">
-    Questions:
+    Answers:
     <div *ngFor="let option of poll.options">
       <app-edit-option
         [option]="option"
@@ -23,6 +24,6 @@
   <app-add-option (optionCreated)="onOptionAdded($event)"></app-add-option>
   <div>
     {{ poll.options.length }}/{{ questionLimit }} possible answers
-    <button class="btn btn-primary">Reset</button>
+    <button class="btn btn-primary" (click)="reset()">Reset</button>
   </div>
 </div>

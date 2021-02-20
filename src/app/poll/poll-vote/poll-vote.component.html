@@ -1,5 +1,6 @@
 <div class="container">
-  <p>{{ poll.title }}</p>
+  <h2>Vote</h2>
+  <h3>{{ poll.title }}</h3>
   <form (ngSubmit)="onSubmit()">
     <div class="custom-control custom-radio" *ngFor="let option of poll.options; let i = index">
       <input

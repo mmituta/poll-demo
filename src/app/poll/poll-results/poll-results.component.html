@@ -1,7 +1,5 @@
-<ngx-charts-bar-vertical 
-    [results]="data"
-    [showXAxisLabel]="true"
-    [xAxis]="true"
-    [yAxis]="true"
-    [showDataLabel]="true">
-</ngx-charts-bar-vertical>
+<h2>Results</h2>
+<h3>{{ poll.title }}</h3>
+<x-chartist type="Bar" [data]="data" [options]="options"></x-chartist>
+
+<span>Total votes: {{ voteCount() }}</span>

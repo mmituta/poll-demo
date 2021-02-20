@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Poll } from '../poll';
 import { Option } from '../option';
 
@@ -12,6 +12,9 @@ export class PollDefinitionComponent {
   questionLimit: number;
   @Input()
   poll: Poll = new Poll();
+
+  @Output()
+  public pollReset: EventEmitter<void> = new EventEmitter();
   constructor() {}
 
   public onOptionAdded(option: Option): void {
@@ -20,5 +23,10 @@ export class PollDefinitionComponent {
 
   public onOptionRemoved(option: Option): void{
     this.poll.removeOption(option);
+  }
+
+  public reset(): void{
+    console.info('click');
+    this.pollReset.emit();
   }
 }

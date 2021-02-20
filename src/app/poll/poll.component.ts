@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Poll } from './poll';
 import { Option } from './option';
-import { PollResult } from './poll-result';
+import { PollResult } from './poll-results/poll-result';
 
 @Component({
   selector: 'app-poll',
@@ -17,5 +17,10 @@ export class PollComponent {
 
   public onVote(option: Option): void {
     this.poll.voteFor(option);
+  }
+
+  public onPollReset(): void{
+    this.poll = new Poll();
+    console.info('reset clicked' );
   }
 }

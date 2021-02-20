@@ -6,13 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { EditOptionComponent } from './poll-definition/edit-option/edit-option.component';
 import { PollVoteComponent } from './poll-vote/poll-vote.component';
 import { PollComponent } from './poll.component';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PollResultsComponent } from './poll-results/poll-results.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChartistModule } from 'ng-chartist';
 @NgModule({
   declarations: [PollDefinitionComponent, PollComponent, AddOptionComponent, EditOptionComponent, PollVoteComponent, PollResultsComponent],
   imports: [
-    SharedModule, FormsModule, NgxChartsModule, BrowserAnimationsModule
+    SharedModule, FormsModule, ChartistModule
   ],
   exports: [PollComponent]
 })

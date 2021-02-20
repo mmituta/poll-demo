@@ -1,5 +1,5 @@
 <div class="container">
-  <app-poll-definition [poll]="poll" [questionLimit]="questionLimit"></app-poll-definition>
+  <app-poll-definition [poll]="poll" [questionLimit]="questionLimit" (pollReset)="onPollReset()" ></app-poll-definition>
   <app-poll-vote [poll]="poll" (voteCasted)="onVote($event)"></app-poll-vote>
-  <app-poll-results [poll]="poll"></app-poll-results>
+  <app-poll-results [poll]="poll" ></app-poll-results>
 </div>

@@ -1,5 +1,4 @@
 import { Option } from './option';
-import { Result } from './poll-results/result-type';
 /**
  * Represents a model of the poll.
  */
@@ -49,12 +48,12 @@ export class Poll {
       (result) => result.option === option
     );
     if (votedResult) {
-      votedResult.value++;
+      votedResult.votes++;
     }
   }
 }
-export class OptionResultAdapter implements Result {
-  public value = 0;
+export class OptionResultAdapter  {
+  public votes = 0;
   constructor(public option: Option) {}
   public get name(): string {
     return this.option.label;

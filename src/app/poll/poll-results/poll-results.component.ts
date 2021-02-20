@@ -1,60 +1,37 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  DoCheck,
-  Input,
-  IterableDiffer,
-  IterableDiffers,
-  KeyValueDiffer,
-  KeyValueDiffers,
-  OnInit,
-} from '@angular/core';
+import { Component, DoCheck, Input } from '@angular/core';
+import { IBarChartOptions, IChartistData } from 'chartist';
 import { Poll } from '../poll';
-import { PollResult } from '../poll-result';
-import { Result } from './result-type';
+import { PollResult } from './poll-result';
 @Component({
   selector: 'app-poll-results',
   templateUrl: './poll-results.component.html',
   styleUrls: ['./poll-results.component.css'],
 })
 export class PollResultsComponent implements DoCheck {
-  public data: Result[] = [{ name: 'test', value: 5 }];
-
+  data: IChartistData = {
+    labels: [],
+    series: [],
+  };
   @Input()
   public poll: Poll = new Poll();
-  iterableDiffer: IterableDiffer<Result>;
-  objDiffers: KeyValueDiffer<string, any>[];
-  constructor(private iterableDiffers: IterableDiffers,   private keyValueDiffers: KeyValueDiffers) {
-    this.iterableDiffer = this.iterableDiffers.find([]).create();
-    this.objDiffers = new Array<KeyValueDiffer<string, any>>();
-    this.updateObjectDiffers();
-  }
 
-  private updateObjectDiffers(): void {
-    this.poll.results.forEach((result, index) => {
-      this.objDiffers[index] = this.keyValueDiffers.find(result).create();
-    });
-  }
+  options: IBarChartOptions = {
+    axisX: {
+      showGrid: false,
+    },
+    axisY: {
+      onlyInteger: true,
+    },
+    height: 300,
+  };
 
   ngDoCheck(): void {
-  
-    const changes = this.iterableDiffer.diff(this.poll.results);
-    if (changes) {
-      console.log('Changes detected!');
-      this.data = [...this.poll.results];
-      this.updateObjectDiffers();
-    }else{
-      this.poll.results.forEach((result, index) => {
-        const objDiffer = this.objDiffers[index];
-        const objChanges = objDiffer.diff(result);
-        if (objChanges) {
-          objChanges.forEachChangedItem((changedItem) => {
-            console.log(changedItem.key);
-            this.data = [...this.poll.results];
-          });
-        }
-      });
-    }
+    this.data = new PollResult(this.poll);
   }
 
+  voteCount(): number {
+    let count = 0;
+    this.poll.results.forEach((result) => (count += result.votes));
+    return count;
+  }
 }
