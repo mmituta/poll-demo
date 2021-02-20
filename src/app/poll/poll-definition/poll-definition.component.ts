@@ -26,7 +26,6 @@ export class PollDefinitionComponent {
   }
 
   public reset(): void{
-    console.info('click');
     this.pollReset.emit();
   }
 }

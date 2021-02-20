@@ -7,11 +7,10 @@ export class PollResult implements IChartistData {
   get series(): Array<number[]> {
     return [this.poll.results.map((result) => result.votes)];
   }
+  set series(value: Array<number[]>) {}
   get labels(): string[] {
     return this.poll.results.map((result) => result.name);
   }
 
   set labels(labels: string[]) {}
-
-  set series(value : Array<number[]>) {}
 }

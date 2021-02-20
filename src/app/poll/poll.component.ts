@@ -21,6 +21,5 @@ export class PollComponent {
 
   public onPollReset(): void{
     this.poll = new Poll();
-    console.info('reset clicked' );
   }
 }

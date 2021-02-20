@@ -37,7 +37,7 @@ describe('Tests for the PollVoteComponent', () => {
       component.poll.addOption(new Option('first'));
       const secondOption = new Option('second');
       component.poll.addOption(secondOption);
-      
+
       fixture.detectChanges();
 
       fixture.whenStable().then(() => {
@@ -69,7 +69,9 @@ describe('Tests for the PollVoteComponent', () => {
         secondInput.click();
         firstInput.click();
         button.click();
-        expect(component.voteCasted.emit).not.toHaveBeenCalledWith(secondOption);
+        expect(component.voteCasted.emit).not.toHaveBeenCalledWith(
+          secondOption
+        );
         expect(component.voteCasted.emit).toHaveBeenCalledWith(firstOption);
       });
     })
