@@ -42,6 +42,5 @@ describe('Tests for the PollComponent', () => {
     expect(component.poll.getAnswers()).not.toContain(answer);
     expect(component.poll.result.hasAnswer(answer)).toBeFalse();
     expect(component.poll.result.voteCount()).toEqual(0);
-  
   });
 });

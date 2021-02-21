@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Answer } from '../answer';
-import { Poll, PollDefinition } from '../poll';
+import { PollDefinition } from '../poll';
 
 import { PollDefinitionComponent } from './poll-definition.component';
 import { deleteFrom } from '../../array-helper';
@@ -50,7 +50,6 @@ describe('Tests for the PollDefinitionComponent', () => {
     expect(component.maxNumberOfAnswersReached()).toBeTrue();
   });
 });
-
 class TestPollDefinition implements PollDefinition {
   title: string;
   constructor(public answers: Answer[] = []) {}
@@ -68,3 +67,4 @@ class TestPollDefinition implements PollDefinition {
     return this.answers;
   }
 }
+

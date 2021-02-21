@@ -1,7 +1,6 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { Poll, PollDefinition } from '../poll';
+import { PollDefinition, NullObjectPollDefinition } from '../poll';
 import { Answer } from '../answer';
-import { NullObjectPoll } from '../null-object-poll-definition';
 
 /**
  * Is allows the user to cast votes.
@@ -17,7 +16,7 @@ export class PollVoteComponent {
    * The poll which will serve as the source of answers.
    */
   @Input()
-  poll: PollDefinition = new NullObjectPoll();
+  poll: PollDefinition = new NullObjectPollDefinition();
 
   /**
    * Will be triggered when the user votes on an answer. It will contain the answert that was voted on.

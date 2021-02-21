@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AppComponent | poll-demo</title>
+	<title>AnswerVote | poll-demo</title>
 	<meta name="description" content="Documentation for poll-demo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,24 +55,31 @@
 					<a href="../modules.html">poll-demo</a>
 				</li>
 				<li>
-					<a href="../modules/app_app_component.html">app/app.component</a>
+					<a href="../modules/app_poll_result.html">app/poll/result</a>
 				</li>
 				<li>
-					<a href="app_app_component.appcomponent.html">AppComponent</a>
+					<a href="app_poll_result.answervote.html">AnswerVote</a>
 				</li>
 			</ul>
-			<h1>Class AppComponent</h1>
+			<h1>Class AnswerVote</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Class that repreents the pairing of answer and the number of votes it has received.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AppComponent</span>
+						<span class="target">AnswerVote</span>
 					</li>
 				</ul>
 			</section>
@@ -83,13 +90,14 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="app_app_component.appcomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="app_poll_result.answervote.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_app_component.appcomponent.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_poll_result.answervote.html#answer" class="tsd-kind-icon">answer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_poll_result.answervote.html#votes" class="tsd-kind-icon">votes</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,13 +109,36 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>App<wbr>Component<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="app_app_component.appcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AppComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Answer<wbr>Vote<span class="tsd-signature-symbol">(</span>answer<span class="tsd-signature-symbol">: </span><a href="app_poll_answer.answer.html" class="tsd-signature-type" data-tsd-kind="Class">Answer</a>, votes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="app_poll_result.answervote.html" class="tsd-signature-type" data-tsd-kind="Class">AnswerVote</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/poll/result.ts#L87">app/poll/result.ts:87</a></li>
+								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="app_app_component.appcomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AppComponent</a></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new instance of AnswerVote.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>answer: <a href="app_poll_answer.answer.html" class="tsd-signature-type" data-tsd-kind="Class">Answer</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>from the results.</p>
+									</div>
+								</li>
+								<li>
+									<h5>votes: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>number of votes the given answer has received.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="app_poll_result.answervote.html" class="tsd-signature-type" data-tsd-kind="Class">AnswerVote</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -115,13 +146,17 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;poll-demo&#x27;</span></div>
+					<a name="answer" class="tsd-anchor"></a>
+					<h3>answer</h3>
+					<div class="tsd-signature tsd-kind-icon">answer<span class="tsd-signature-symbol">:</span> <a href="app_poll_answer.answer.html" class="tsd-signature-type" data-tsd-kind="Class">Answer</a></div>
 					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/app.component.ts#L9">app/app.component.ts:9</a></li>
-						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="votes" class="tsd-anchor"></a>
+					<h3>votes</h3>
+					<div class="tsd-signature tsd-kind-icon">votes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
 					</aside>
 				</section>
 			</section>
@@ -133,7 +168,7 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/app_app_component.html">app/app.component</a>
+						<a href="../modules/app_poll_result.html">app/poll/result</a>
 					</li>
 				</ul>
 			</nav>
@@ -142,18 +177,24 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="app_app_component.appcomponent.html" class="tsd-kind-icon">App<wbr>Component</a>
+						<a href="app_poll_result.answervote.html" class="tsd-kind-icon">Answer<wbr>Vote</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="app_app_component.appcomponent.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="app_poll_result.answervote.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="app_app_component.appcomponent.html#title" class="tsd-kind-icon">title</a>
+								<a href="app_poll_result.answervote.html#answer" class="tsd-kind-icon">answer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="app_poll_result.answervote.html#votes" class="tsd-kind-icon">votes</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="app_poll_result.result.html" class="tsd-kind-icon">Result</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

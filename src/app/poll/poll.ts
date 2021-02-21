@@ -4,7 +4,7 @@ import { Result } from './result';
 /**
  * Represents a model of the poll.
  */
-export class Poll implements PollDefinition {
+export class Poll implements PollDefinition, PollResults {
   public title = '';
   private answers: Answer[] = [];
   public result: Result = new Result();
@@ -17,27 +17,29 @@ export class Poll implements PollDefinition {
     this.addAnswer(new Answer('Second answer'));
   }
   /**
-   * Adds an answer to the poll.
-   * @param answer to be added to the poll.
+   * @see {@link PollDefinition.addAnswer}
    */
   public addAnswer(answer: Answer): void {
     this.answers.push(answer);
     this.result.addAnswer(answer);
   }
-
   /**
-   * Removes the specified option from te poll.
-   * @param answer poll to be removed. If the poll does not contain specified option, then nothing will happen.
+   * @see {@link PollDefinition.deleteAnswer}
    */
   public deleteAnswer(answer: Answer): void {
     deleteFrom(this.answers, answer);
     this.deleteFromResults(answer);
   }
-
+  /**
+   * @see {@link PollDefinition.getAnswers}
+   */
   public getAnswers(): Answer[] {
     return this.answers;
   }
 
+  /**
+   * @see {@link PollDefinition.answersCount}
+   */
   public answersCount(): number {
     return this.answers.length;
   }
@@ -52,16 +54,55 @@ export class Poll implements PollDefinition {
   private deleteFromResults(answer: Answer): void {
     this.result.deleteAnswer(answer);
   }
-
 }
 
 /**
  * Defines the properties necessary to define the poll.
  */
 export interface PollDefinition {
+  /**
+   * Title of the poll.
+   */
   title: string;
+  /**
+   * Adds an answer to the poll.
+   * @param answer to be added to the poll.
+   */
   addAnswer(answer: Answer): void;
+  /**
+   * Removes the specified option from te poll.
+   * @param answer poll to be removed. If the poll does not contain specified option, then nothing will happen.
+   */
   deleteAnswer(answer: Answer): void;
+  /**
+   * Returns the total number of answrs in the poll.
+   */
   answersCount(): number;
+  /**
+   * Returns the answers from the poll.
+   */
   getAnswers(): Answer[];
+}
+
+/**
+ * Defines the properties required for displaying the results of the poll.
+ */
+export interface PollResults {
+  title: string;
+  result: Result;
+}
+
+/**
+ * Null object implementation of PollDefinition.
+ */
+export class NullObjectPollDefinition implements PollDefinition {
+  title = '';
+  addAnswer(answer: Answer): void {}
+  deleteAnswer(answer: Answer): void {}
+  answersCount(): number {
+    return 0;
+  }
+  getAnswers(): Answer[] {
+    return [];
+  }
 }

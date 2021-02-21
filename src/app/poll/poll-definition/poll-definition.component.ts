@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { PollDefinition } from '../poll';
+import { PollDefinition, NullObjectPollDefinition } from '../poll';
 import { Answer } from '../answer';
-import { NullObjectPoll } from '../null-object-poll-definition';
 
 /**
  * Component that is responsible for defining the poll.
@@ -29,7 +28,7 @@ export class PollDefinitionComponent {
    * Instance of poll that will be edited by the component.
    */
   @Input()
-  poll: PollDefinition = new NullObjectPoll();
+  poll: PollDefinition = new NullObjectPollDefinition();
 
   /**
    * Represents the event of poll reset. The event indicates that the poll should be reseted to it's initial state.

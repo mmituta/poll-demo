@@ -9,7 +9,7 @@ export class Result {
   /**
    * Adds a vote for the specified answer. It will throw an error if the specified answer does not exist.
    * @param answer answer for which the vote will be added.
-   * @see hasAnswer
+   * @see {@link hasAnswer}
    */
   public addVoteFor(answer: Answer): void {
     this.checkIfExists(answer);
@@ -19,7 +19,7 @@ export class Result {
   /**
    * Gets the number of votes added for the specified answer. It will throw an error if the specified answer does not exist.
    * @param answer answer for which the votes will be returned.
-   * @see hasAnswer
+   * @see {@link hasAnswer}
    */
   public getVotesFor(answer: Answer): number {
     this.checkIfExists(answer);
@@ -32,7 +32,7 @@ export class Result {
   /**
    * Adds an answer to the result. After added, the answer has zero votes.
    * @param answer answer to be added.
-   * @see addVoteFor
+   * @see {@link addVoteFor}
    */
   public addAnswer(answer: Answer): void {
     this.votes.set(answer, 0);

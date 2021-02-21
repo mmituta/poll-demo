@@ -25,12 +25,13 @@ describe('Tests for the PollResultsComponent', () => {
   });
 
   it('should get the vote count', () => {
-    component.poll = new Poll();
+    const poll = new Poll();
+    component.results = poll;
     const answer = new Answer('test');
-    component.poll.addAnswer(answer);
-    component.poll.voteFor(answer);
-    component.poll.voteFor(answer);
-    component.poll.voteFor(answer);
+    poll.addAnswer(answer);
+    poll.voteFor(answer);
+    poll.voteFor(answer);
+    poll.voteFor(answer);
 
     expect(component.voteCount()).toEqual(3);
   });

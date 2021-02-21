@@ -1,6 +1,6 @@
 import { Component, DoCheck, Input } from '@angular/core';
 import { IBarChartOptions, IChartistData } from 'chartist';
-import { Poll } from '../poll';
+import { Poll, PollResults } from '../poll';
 import { PollResultChartDataAdapter } from './poll-result-chart-data-adapter';
 /**
  * Represents the results of the poll. It includes a chart component that visualises the result.
@@ -18,7 +18,7 @@ export class PollResultsComponent implements DoCheck {
    * The poll that the results will be displayed.
    */
   @Input()
-  public poll: Poll = new Poll();
+  public results: PollResults = new Poll();
 
   options: IBarChartOptions = {
     axisX: {
@@ -37,13 +37,13 @@ export class PollResultsComponent implements DoCheck {
    * the change detection mechanism would not realize the changes.
    */
   ngDoCheck(): void {
-    this.data = new PollResultChartDataAdapter(this.poll.result);
+    this.data = new PollResultChartDataAdapter(this.results.result);
   }
 
   /**
    * Returns the total number of votes.
    */
   voteCount(): number {
-    return this.poll.result.voteCount();
+    return this.results.result.voteCount();
   }
 }

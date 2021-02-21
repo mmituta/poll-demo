@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LimitedValueLengthDirective | poll-demo</title>
+	<title>AddAnswerComponent | poll-demo</title>
 	<meta name="description" content="Documentation for poll-demo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">poll-demo</a>
 				</li>
 				<li>
-					<a href="../modules/app_shared_limited_value_length_directive.html">app/shared/limited-value-length-directive</a>
+					<a href="../modules/app_poll_poll_definition_answer_add_answer_add_component.html">app/poll/poll-definition/answer-add/answer-add.component</a>
 				</li>
 				<li>
-					<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html">LimitedValueLengthDirective</a>
+					<a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html">AddAnswerComponent</a>
 				</li>
 			</ul>
-			<h1>Class LimitedValueLengthDirective</h1>
+			<h1>Class AddAnswerComponent</h1>
 		</div>
 	</div>
 </header>
@@ -71,10 +71,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>This directive disables the input element if its values is longer than the limit configured by the
-							<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#limit">limit</a> input property.
-							<br/>
-						By default the limit is set to 80 characters of length.</p>
+						<p>This component is responsible for creating new poll answers.
+							When the answer is created, the event is emitted, and the component is reseted to its
+						initial state - it is ready for creating another answer.</p>
 					</div>
 				</div>
 			</section>
@@ -82,7 +81,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">LimitedValueLengthDirective</span>
+						<span class="target">AddAnswerComponent</span>
 					</li>
 				</ul>
 			</section>
@@ -93,20 +92,21 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#inputelement" class="tsd-kind-icon">input<wbr>Element</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#limit" class="tsd-kind-icon">limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#answercreated" class="tsd-kind-icon">answer<wbr>Created</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#answertext" class="tsd-kind-icon">answer<wbr>Text</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#disabled" class="tsd-kind-icon">disabled</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#disableelementifvalueisoverthelimit" class="tsd-kind-icon">disable<wbr>Element<wbr>IfValue<wbr>IsOver<wbr>The<wbr>Limit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#createanswer" class="tsd-kind-icon">create<wbr>Answer</a></li>
 							</ul>
 						</section>
 					</div>
@@ -118,51 +118,59 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Limited<wbr>Value<wbr>Length<wbr>Directive<span class="tsd-signature-symbol">(</span>el<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html" class="tsd-signature-type" data-tsd-kind="Class">LimitedValueLengthDirective</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Add<wbr>Answer<wbr>Component<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AddAnswerComponent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/shared/limited-value-length-directive.ts#L20">app/shared/limited-value-length-directive.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/poll/poll-definition/answer-add/answer-add.component.ts#L26">app/poll/poll-definition/answer-add/answer-add.component.ts:26</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>el: <span class="tsd-signature-type">ElementRef</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html" class="tsd-signature-type" data-tsd-kind="Class">LimitedValueLengthDirective</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html" class="tsd-signature-type" data-tsd-kind="Class">AddAnswerComponent</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="inputelement" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> input<wbr>Element</h3>
-					<div class="tsd-signature tsd-kind-icon">input<wbr>Element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLInputElement</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/shared/limited-value-length-directive.ts#L20">app/shared/limited-value-length-directive.ts:20</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="limit" class="tsd-anchor"></a>
-					<h3>limit</h3>
-					<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 80</span></div>
+					<a name="answercreated" class="tsd-anchor"></a>
+					<h3>answer<wbr>Created</h3>
+					<div class="tsd-signature tsd-kind-icon">answer<wbr>Created<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><a href="app_poll_answer.answer.html" class="tsd-signature-type" data-tsd-kind="Class">Answer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/shared/limited-value-length-directive.ts#L18">app/shared/limited-value-length-directive.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/poll/poll-definition/answer-add/answer-add.component.ts#L18">app/poll/poll-definition/answer-add/answer-add.component.ts:18</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Defines the limit of value allowed by the directive.
-							If the value is longer than the limit, the element from which the value comes from will be disabled.</p>
+							<p>Event that will be emitted the moment the answer is created. It contains the created answer.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="answertext" class="tsd-anchor"></a>
+					<h3>answer<wbr>Text</h3>
+					<div class="tsd-signature tsd-kind-icon">answer<wbr>Text<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/poll/poll-definition/answer-add/answer-add.component.ts#L26">app/poll/poll-definition/answer-add/answer-add.component.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="disabled" class="tsd-anchor"></a>
+					<h3>disabled</h3>
+					<div class="tsd-signature tsd-kind-icon">disabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/poll/poll-definition/answer-add/answer-add.component.ts#L24">app/poll/poll-definition/answer-add/answer-add.component.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Defines if the component is disabled. If the component is disabled, the input and the button for creating new answer will be disabled.</p>
 						</div>
 					</div>
 				</section>
@@ -170,21 +178,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="disableelementifvalueisoverthelimit" class="tsd-anchor"></a>
-					<h3>disable<wbr>Element<wbr>IfValue<wbr>IsOver<wbr>The<wbr>Limit</h3>
+					<a name="createanswer" class="tsd-anchor"></a>
+					<h3>create<wbr>Answer</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">disable<wbr>Element<wbr>IfValue<wbr>IsOver<wbr>The<wbr>Limit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Answer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/shared/limited-value-length-directive.ts#L30">app/shared/limited-value-length-directive.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/mmituta/poll-demo/blob/47d56d7/src/app/poll/poll-definition/answer-add/answer-add.component.ts#L34">app/poll/poll-definition/answer-add/answer-add.component.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Invoked when the value of the element is updated. It checks if the value is over the limit and disables the element if it is.</p>
+									<p>When called it will emit an event that contains the created answer.
+									After the event is emitted, the component will be reverted to its initial state.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -200,7 +209,7 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/app_shared_limited_value_length_directive.html">app/shared/limited-<wbr>value-<wbr>length-<wbr>directive</a>
+						<a href="../modules/app_poll_poll_definition_answer_add_answer_add_component.html">app/poll/poll-<wbr>definition/answer-<wbr>add/answer-<wbr>add.component</a>
 					</li>
 				</ul>
 			</nav>
@@ -209,19 +218,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html" class="tsd-kind-icon">Limited<wbr>Value<wbr>Length<wbr>Directive</a>
+						<a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html" class="tsd-kind-icon">Add<wbr>Answer<wbr>Component</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#inputelement" class="tsd-kind-icon">input<wbr>Element</a>
+								<a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#limit" class="tsd-kind-icon">limit</a>
+								<a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#answercreated" class="tsd-kind-icon">answer<wbr>Created</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#answertext" class="tsd-kind-icon">answer<wbr>Text</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#disabled" class="tsd-kind-icon">disabled</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="app_shared_limited_value_length_directive.limitedvaluelengthdirective.html#disableelementifvalueisoverthelimit" class="tsd-kind-icon">disable<wbr>Element<wbr>IfValue<wbr>IsOver<wbr>The<wbr>Limit</a>
+								<a href="app_poll_poll_definition_answer_add_answer_add_component.addanswercomponent.html#createanswer" class="tsd-kind-icon">create<wbr>Answer</a>
 							</li>
 						</ul>
 					</li>
@@ -248,9 +260,6 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 			</ul>
 		</div>
 	</div>
