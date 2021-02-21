@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
+The application is deployed under: https://mmituta.github.io
+
+Documentation is available under: https://mmituta.github.io/docs/index.html
+
 ## Remarks
 
 I found the requirement to disable inputs if the text is longer then 80 chars to be weird. Normally I would advice against or try to clarify if I understand the requirement correctly. By disabling the input when the text is too long we're preventing the user from correcting the input - the only options is to reload the page.
