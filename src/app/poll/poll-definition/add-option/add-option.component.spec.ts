@@ -33,7 +33,6 @@ describe('Tests for add option component', () => {
   });
 
   it('should emit an option added event', () => {
-
     inputText.value = 'Option name';
     inputText.dispatchEvent(new Event('input'));
 
@@ -41,7 +40,9 @@ describe('Tests for add option component', () => {
 
     button.click();
 
-    expect(component.optionCreated.emit).toHaveBeenCalledWith(new Option('Option name'));
+    expect(component.optionCreated.emit).toHaveBeenCalledWith(
+      new Option('Option name')
+    );
   });
 
   it(
@@ -56,4 +57,15 @@ describe('Tests for add option component', () => {
       fixture.whenStable().then(() => expect(inputText.value).toBe(''));
     })
   );
+
+  it('should disable text input and button using input parameter', () => {
+    component.disabled = true;
+    fixture.detectChanges();
+
+    fixture.whenStable().then(()=>{
+      expect(inputText.disabled).toBeTrue();
+      expect(button.disabled).toBeTrue();
+
+    })
+  });
 });

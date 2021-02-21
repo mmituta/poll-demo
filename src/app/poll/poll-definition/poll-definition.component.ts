@@ -9,7 +9,9 @@ import { Option } from '../option';
 })
 export class PollDefinitionComponent {
   @Input()
-  questionLimit: number;
+  maxAnswers: number;
+  @Input()
+  minAnswers: number;
   @Input()
   poll: Poll = new Poll();
 
@@ -30,10 +32,10 @@ export class PollDefinitionComponent {
   }
 
   public isAddDisabled(): boolean {
-    return this.poll.options.length >= this.questionLimit;
+    return this.poll.options.length >= this.maxAnswers;
   }
 
   public isDeleteDisabled(): boolean {
-    return this.poll.options.length <= 2;
+    return this.poll.options.length <= this.minAnswers;
   }
 }

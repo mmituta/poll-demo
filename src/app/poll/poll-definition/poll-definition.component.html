@@ -25,7 +25,7 @@
   </div>
   <app-add-option (optionCreated)="onOptionAdded($event)" [disabled]="isAddDisabled()"></app-add-option>
   <div>
-    <span id="answers-count-lbl">{{ poll.options.length }}/{{ questionLimit }} possible answers</span>
+    <span id="answers-count-lbl">{{ poll.options.length }}/{{ maxAnswers }} possible answers</span>
     <button id="reset-btn" class="btn btn-primary" (click)="reset()">Reset</button>
   </div>
 </div>

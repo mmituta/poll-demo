@@ -34,18 +34,17 @@ describe('Tests for the PollVoteComponent', () => {
     'should emit the selected option',
     waitForAsync(() => {
       component.poll = new Poll();
-      component.poll.addOption(new Option('first'));
-      const secondOption = new Option('second');
-      component.poll.addOption(secondOption);
+      const newOption = new Option('new');
+      component.poll.addOption(newOption);
 
       fixture.detectChanges();
 
       fixture.whenStable().then(() => {
         spyOn(component.voteCasted, 'emit');
-        const secondInput = findInput('poll-answer-1');
+        const secondInput = findInput('poll-answer-2');
         secondInput.click();
         button.click();
-        expect(component.voteCasted.emit).toHaveBeenCalledWith(secondOption);
+        expect(component.voteCasted.emit).toHaveBeenCalledWith(newOption);
       });
     })
   );
@@ -53,26 +52,24 @@ describe('Tests for the PollVoteComponent', () => {
   it(
     'should emit the option only after button click',
     waitForAsync(() => {
-      const firstOption = new Option('first');
-      const secondOption = new Option('second');
+      const thirdOption = new Option('third');
 
       component.poll = new Poll();
-      component.poll.addOption(firstOption);
-      component.poll.addOption(secondOption);
+      component.poll.addOption(thirdOption);
 
       fixture.detectChanges();
 
       fixture.whenStable().then(() => {
         spyOn(component.voteCasted, 'emit');
         const firstInput = findInput('poll-answer-0');
-        const secondInput = findInput('poll-answer-1');
-        secondInput.click();
+        const thirdInput = findInput('poll-answer-2');
         firstInput.click();
+        thirdInput.click();
         button.click();
         expect(component.voteCasted.emit).not.toHaveBeenCalledWith(
-          secondOption
+          component.poll.options[0]
         );
-        expect(component.voteCasted.emit).toHaveBeenCalledWith(firstOption);
+        expect(component.voteCasted.emit).toHaveBeenCalledWith(thirdOption);
       });
     })
   );

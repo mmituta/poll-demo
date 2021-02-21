@@ -9,16 +9,17 @@ import { Option } from './option';
 })
 export class PollComponent {
   @Input()
-  questionLimit = 10;
+  maxAnswers = 10;
+  @Input()
+  minAnswers = 2;
   poll: Poll = new Poll();
-  constructor() {
-  }
+  constructor() {}
 
   public onVote(option: Option): void {
     this.poll.voteFor(option);
   }
 
-  public onPollReset(): void{
+  public onPollReset(): void {
     this.poll = new Poll();
   }
 }
