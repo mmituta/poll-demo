@@ -1,8 +1,9 @@
 <div class="input-group mb-3">
   <input
+    [id]="id+'-edit-input'"
     type="text"
     appLimitedLength
     class="form-control"
     [(ngModel)]="option.label"
-  /><button class="btn btn-primary input-group-append" (click)="removeOption()">X</button>
+  /><button [id]="id+'-remove-btn'" class="btn btn-primary input-group-append" (click)="removeOption()">X</button>
 </div>

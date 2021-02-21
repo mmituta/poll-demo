@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Option } from '../../option';
 
 /**
@@ -20,6 +20,8 @@ export class AddOptionComponent {
   @Output()
   public optionCreated: EventEmitter<Option> = new EventEmitter();
 
+  @Input()
+  disabled: boolean;
   optionText: string;
 
   constructor() {}

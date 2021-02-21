@@ -1,10 +1,12 @@
 <div class="input-group mb-3">
   <input
+    id="add-answer-input"
+    [disabled]="disabled"
     type="text"
     appLimitedLength
     class="form-control"
     [(ngModel)]="optionText"
-  /><button class="btn btn-primary input-group-append" (click)="createOption()">
+  /><button id="add-answer-btn" [disabled]="disabled" class="btn btn-primary input-group-append" (click)="createOption()">
     Add
   </button>
 </div>

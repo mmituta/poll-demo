@@ -42,7 +42,7 @@ describe('Tests for the PollVoteComponent', () => {
 
       fixture.whenStable().then(() => {
         spyOn(component.voteCasted, 'emit');
-        const secondInput = findInput('option-1');
+        const secondInput = findInput('poll-answer-1');
         secondInput.click();
         button.click();
         expect(component.voteCasted.emit).toHaveBeenCalledWith(secondOption);
@@ -64,8 +64,8 @@ describe('Tests for the PollVoteComponent', () => {
 
       fixture.whenStable().then(() => {
         spyOn(component.voteCasted, 'emit');
-        const firstInput = findInput('option-0');
-        const secondInput = findInput('option-1');
+        const firstInput = findInput('poll-answer-0');
+        const secondInput = findInput('poll-answer-1');
         secondInput.click();
         firstInput.click();
         button.click();

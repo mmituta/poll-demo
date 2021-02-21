@@ -28,4 +28,8 @@ export class PollDefinitionComponent {
   public reset(): void{
     this.pollReset.emit();
   }
+
+  public isAddingDisabled(): boolean{
+    return this.poll.options.length >= this.questionLimit;
+  }
 }

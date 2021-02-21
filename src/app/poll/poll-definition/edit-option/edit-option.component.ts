@@ -7,6 +7,10 @@ import { Option } from '../../option';
   styleUrls: ['./edit-option.component.css'],
 })
 export class EditOptionComponent {
+
+  @Input()
+  public id: string;
+
   @Input()
   public option: Option = new Option('');
   @Output()
