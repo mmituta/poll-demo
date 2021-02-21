@@ -56,13 +56,13 @@ describe('poll-demo app', () => {
     expect(await chartAnswerPresent('edit')).toBeTruthy();
   });
   it('should delete poll answer', async () => {
-    await element(by.id(ADD_ANSWER_INPUT)).sendKeys('answer');
+    await element(by.id(ADD_ANSWER_INPUT)).sendKeys('123');
     await element(by.id(ADD_ANSWER_BTN)).click();
     await element(removeBtnByAnswerNumber(2)).click();
 
     expect(await element(voteInputByAnswerNumber(2)).isPresent()).toBeFalsy();
     expect(await element(voteLabelByAnswerNumber(2)).isPresent()).toBeFalsy();
-    expect(await chartAnswerPresent('answer')).toBeFalsy();
+    expect(await chartAnswerPresent('123')).toBeFalsy();
   });
 
   it('should vote for poll answers', async () => {

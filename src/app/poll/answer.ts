@@ -1,3 +1,3 @@
-export class Option {
+export class Answer {
   constructor(public label: string) {}
 }

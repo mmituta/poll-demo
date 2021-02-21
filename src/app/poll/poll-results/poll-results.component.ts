@@ -4,8 +4,7 @@ import { Poll } from '../poll';
 import { PollResultChartDataAdapter } from './poll-result-chart-data-adapter';
 @Component({
   selector: 'app-poll-results',
-  templateUrl: './poll-results.component.html',
-  styleUrls: ['./poll-results.component.css'],
+  templateUrl: './poll-results.component.html'
 })
 export class PollResultsComponent implements DoCheck {
   data: IChartistData = {

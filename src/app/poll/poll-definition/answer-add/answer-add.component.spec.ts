@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { AddOptionComponent } from './add-option.component';
+import { AddAnswerComponent } from './answer-add.component';
 import { FormsModule } from '@angular/forms';
-import { Option } from '../../option';
+import { Answer } from '../../answer';
 
 describe('Tests for add option component', () => {
-  let component: AddOptionComponent;
-  let fixture: ComponentFixture<AddOptionComponent>;
+  let component: AddAnswerComponent;
+  let fixture: ComponentFixture<AddAnswerComponent>;
 
   let inputText: HTMLInputElement;
   let button: HTMLButtonElement;
@@ -14,12 +14,12 @@ describe('Tests for add option component', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [AddOptionComponent],
+      declarations: [AddAnswerComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddOptionComponent);
+    fixture = TestBed.createComponent(AddAnswerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -36,12 +36,12 @@ describe('Tests for add option component', () => {
     inputText.value = 'Option name';
     inputText.dispatchEvent(new Event('input'));
 
-    spyOn(component.optionCreated, 'emit');
+    spyOn(component.answerCreated, 'emit');
 
     button.click();
 
-    expect(component.optionCreated.emit).toHaveBeenCalledWith(
-      new Option('Option name')
+    expect(component.answerCreated.emit).toHaveBeenCalledWith(
+      new Answer('Option name')
     );
   });
 

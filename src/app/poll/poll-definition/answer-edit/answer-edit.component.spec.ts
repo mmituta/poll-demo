@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { EditOptionComponent } from './edit-option.component';
+import { EditOptionAnswerComponent } from './answer-edit.component';
 import { FormsModule } from '@angular/forms';
 
 describe('Tests for the edit option component', () => {
-  let component: EditOptionComponent;
-  let fixture: ComponentFixture<EditOptionComponent>;
+  let component: EditOptionAnswerComponent;
+  let fixture: ComponentFixture<EditOptionAnswerComponent>;
 
   let editInput: HTMLInputElement;
   let removeBtn: HTMLButtonElement;
@@ -13,12 +13,12 @@ describe('Tests for the edit option component', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [EditOptionComponent],
+      declarations: [EditOptionAnswerComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditOptionComponent);
+    fixture = TestBed.createComponent(EditOptionAnswerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -32,25 +32,25 @@ describe('Tests for the edit option component', () => {
   });
 
   it('should emit an option removed event', () => {
-    spyOn(component.optionRemoved, 'emit');
+    spyOn(component.answerRemoved, 'emit');
 
     removeBtn.click();
 
-    expect(component.optionRemoved.emit).toHaveBeenCalledWith(component.option);
+    expect(component.answerRemoved.emit).toHaveBeenCalledWith(component.answer);
   });
 
   it('should change the name of the option', () => {
-    component.option.label = 'original value';
+    component.answer.label = 'original value';
     editInput.value = 'new value';
     editInput.dispatchEvent(new Event('input'));
 
-    expect(component.option.label).toEqual('new value');
+    expect(component.answer.label).toEqual('new value');
   });
 
   it(
     'should disable the remove button using input parameter',
     waitForAsync(() => {
-      component.disableDelete = true;
+      component.deleteDisabled = true;
       fixture.detectChanges();
       fixture.whenStable().then(() => expect(removeBtn.disabled).toBeTrue());
     })

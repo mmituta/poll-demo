@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Poll } from './poll';
-import { Option } from './option';
+import { Answer } from './answer';
 
 @Component({
   selector: 'app-poll',
@@ -8,18 +8,30 @@ import { Option } from './option';
   styleUrls: ['./poll.component.css'],
 })
 export class PollComponent {
+  /**
+   * Defines the maximum number of answers allowed by the poll.
+   */
   @Input()
-  maxAnswers = 10;
+  public maxAnswers = 10;
+  /** Defines the minimum number of answers allowed by the poll. */
   @Input()
-  minAnswers = 2;
+  public minAnswers = 2;
+
   poll: Poll = new Poll();
   constructor() {}
 
-  public onVote(option: Option): void {
-    this.poll.voteFor(option);
+  /**
+   * Adds a vote for the specified answer.
+   * @param answer that will be voted for.
+   */
+  public voteFor(answer: Answer): void {
+    this.poll.voteFor(answer);
   }
 
-  public onPollReset(): void {
+  /**
+   * Resets the poll to its initial state. It removes the title, the answers and the votes added by the user.
+   */
+  public resetPoll(): void {
     this.poll = new Poll();
   }
 }

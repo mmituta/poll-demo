@@ -1,4 +1,4 @@
-import { Option } from '../option';
+import { Answer } from '../answer';
 import { PollResult } from '../poll-result';
 import { PollResultChartDataAdapter } from './poll-result-chart-data-adapter';
 describe('Tests for the PollResultAdapter', () => {
@@ -25,8 +25,8 @@ describe('Tests for the PollResultAdapter', () => {
   });
 
   it('should return the arrays of labels and vote counts from the result', () => {
-    const firstAnswer = new Option('1');
-    const secondAnswer = new Option('2');
+    const firstAnswer = new Answer('1');
+    const secondAnswer = new Answer('2');
     result.addAnswer(firstAnswer);
     result.addAnswer(secondAnswer);
 
@@ -42,9 +42,9 @@ describe('Tests for the PollResultAdapter', () => {
   });
 
   it('should return 0 for answers that had no votes', () => {
-    const firstAnswer = new Option('1');
-    const secondAnswer = new Option('2');
-    const thirdAnswer = new Option('3');
+    const firstAnswer = new Answer('1');
+    const secondAnswer = new Answer('2');
+    const thirdAnswer = new Answer('3');
 
     result.addAnswer(firstAnswer);
     result.addAnswer(secondAnswer);

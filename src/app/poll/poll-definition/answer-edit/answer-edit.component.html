@@ -1,0 +1,9 @@
+<div class="input-group mb-3">
+  <input
+    [id]="id+'-edit-input'"
+    type="text"
+    appLimitedLength
+    class="form-control"
+    [(ngModel)]="answer.label"
+  /><button [id]="id+'-remove-btn'" [disabled]="deleteDisabled" class="btn btn-primary input-group-append" (click)="removeAnswer()">X</button>
+</div>

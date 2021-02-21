@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { PollVoteComponent } from './poll-vote.component';
 import { FormsModule } from '@angular/forms';
 import { Poll } from '../poll';
-import { Option } from '../option';
+import { Answer } from '../answer';
 
 describe('Tests for the PollVoteComponent', () => {
   let component: PollVoteComponent;
@@ -34,8 +34,8 @@ describe('Tests for the PollVoteComponent', () => {
     'should emit the selected option',
     waitForAsync(() => {
       component.poll = new Poll();
-      const newOption = new Option('new');
-      component.poll.addOption(newOption);
+      const newOption = new Answer('new');
+      component.poll.addAnswer(newOption);
 
       fixture.detectChanges();
 
@@ -55,10 +55,10 @@ describe('Tests for the PollVoteComponent', () => {
   it(
     'should emit the option only after button click',
     waitForAsync(() => {
-      const thirdOption = new Option('third');
+      const thirdOption = new Answer('third');
 
       component.poll = new Poll();
-      component.poll.addOption(thirdOption);
+      component.poll.addAnswer(thirdOption);
 
       fixture.detectChanges();
 
@@ -72,7 +72,7 @@ describe('Tests for the PollVoteComponent', () => {
         fixture.whenStable().then(() => {
           button.click();
           expect(component.voteCasted.emit).not.toHaveBeenCalledWith(
-            component.poll.options[0]
+            component.poll.answers[0]
           );
           expect(component.voteCasted.emit).toHaveBeenCalledWith(thirdOption);
         });

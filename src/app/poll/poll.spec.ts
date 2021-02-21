@@ -1,4 +1,4 @@
-import { Option } from './option';
+import { Answer } from './answer';
 import { Poll } from './poll';
 describe('Tests for the Poll class', () => {
   let poll: Poll;
@@ -7,17 +7,17 @@ describe('Tests for the Poll class', () => {
   });
 
   it('should create an option with the given text', () => {
-    const option = new Option('name');
-    poll.addOption(option);
+    const option = new Answer('name');
+    poll.addAnswer(option);
 
-    expect(poll.options).toContain(option);
+    expect(poll.answers).toContain(option);
   });
 
   it('should remove the specified option', () => {
-    const option = new Option('option');
-    poll.addOption(option);
+    const option = new Answer('option');
+    poll.addAnswer(option);
     poll.deleteAnswer(option);
 
-    expect(poll.options).not.toContain(option);
+    expect(poll.answers).not.toContain(option);
   });
 });

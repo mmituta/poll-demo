@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Poll } from '../poll';
-import { Option } from '../option';
+import { Answer } from '../answer';
 
 @Component({
   selector: 'app-poll-vote',
@@ -8,19 +8,19 @@ import { Option } from '../option';
   styleUrls: ['./poll-vote.component.css'],
 })
 export class PollVoteComponent {
-  selectedOption: Option;
+  selectedAnswer: Answer;
   @Input()
   poll: Poll = new Poll();
 
   @Output()
-  voteCasted: EventEmitter<Option> = new EventEmitter();
+  voteCasted: EventEmitter<Answer> = new EventEmitter();
   constructor() {}
 
   public onSubmit(): void {
-    this.voteCasted.emit(this.selectedOption);
+    this.voteCasted.emit(this.selectedAnswer);
   }
 
-  noOptionSelected(): boolean {
-    return this.selectedOption ? false : true;
+  noAnswerSelected(): boolean {
+    return this.selectedAnswer ? false : true;
   }
 }

@@ -2,16 +2,16 @@
   <h2>Vote</h2>
   <h3 id="poll-title-voting">{{ poll.title }}</h3>
   <form (ngSubmit)="onSubmit()">
-    <div class="custom-control custom-radio" *ngFor="let option of poll.options; let i = index">
+    <div class="custom-control custom-radio" *ngFor="let answer of poll.answers; let i = index">
       <input
       class="custom-control-input"
         [id]="'poll-answer-'+i"
         type="radio"
-        [value]="option"
-        [(ngModel)]="selectedOption"
-        name="option"
+        [value]="answer"
+        [(ngModel)]="selectedAnswer"
+        [name]="answer.label"
       />
-      <label  [id]="'poll-answer-'+i+'-lbl'" class="custom-control-label"  [for]="'poll-answer-'+i">{{ option.label }}</label></div>
-    <button id="vote-btn" [disabled]="noOptionSelected()" type="submit" class="btn btn-primary">Vote</button>
+      <label  [id]="'poll-answer-'+i+'-lbl'" class="custom-control-label"  [for]="'poll-answer-'+i">{{ answer.label }}</label></div>
+    <button id="vote-btn" [disabled]="noAnswerSelected()" type="submit" class="btn btn-primary">Vote</button>
   </form>
 </div>
