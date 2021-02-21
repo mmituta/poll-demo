@@ -58,14 +58,16 @@ describe('Tests for add option component', () => {
     })
   );
 
-  it('should disable text input and button using input parameter', () => {
-    component.disabled = true;
-    fixture.detectChanges();
+  it(
+    'should disable text input and button using input parameter',
+    waitForAsync(() => {
+      component.disabled = true;
+      fixture.detectChanges();
 
-    fixture.whenStable().then(()=>{
-      expect(inputText.disabled).toBeTrue();
-      expect(button.disabled).toBeTrue();
-
+      fixture.whenStable().then(() => {
+        expect(inputText.disabled).toBeTrue();
+        expect(button.disabled).toBeTrue();
+      });
     })
-  });
+  );
 });

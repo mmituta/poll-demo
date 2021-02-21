@@ -24,7 +24,7 @@ export class PollDefinitionComponent {
   }
 
   public onOptionRemoved(option: Option): void {
-    this.poll.removeOption(option);
+    this.poll.deleteAnswer(option);
   }
 
   public reset(): void {

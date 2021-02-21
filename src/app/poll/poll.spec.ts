@@ -16,7 +16,7 @@ describe('Tests for the Poll class', () => {
   it('should remove the specified option', () => {
     const option = new Option('option');
     poll.addOption(option);
-    poll.removeOption(option);
+    poll.deleteAnswer(option);
 
     expect(poll.options).not.toContain(option);
   });

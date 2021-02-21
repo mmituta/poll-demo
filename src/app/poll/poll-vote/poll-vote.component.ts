@@ -8,7 +8,7 @@ import { Option } from '../option';
   styleUrls: ['./poll-vote.component.css'],
 })
 export class PollVoteComponent {
-  selectedOption: Option = new Option('nothing-clicked');
+  selectedOption: Option;
   @Input()
   poll: Poll = new Poll();
 
@@ -18,5 +18,9 @@ export class PollVoteComponent {
 
   public onSubmit(): void {
     this.voteCasted.emit(this.selectedOption);
+  }
+
+  noOptionSelected(): boolean {
+    return this.selectedOption ? false : true;
   }
 }

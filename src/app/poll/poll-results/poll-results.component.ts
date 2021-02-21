@@ -1,7 +1,7 @@
 import { Component, DoCheck, Input } from '@angular/core';
 import { IBarChartOptions, IChartistData } from 'chartist';
 import { Poll } from '../poll';
-import { PollResult } from './poll-result';
+import { PollResultChartDataAdapter } from './poll-result-chart-data-adapter';
 @Component({
   selector: 'app-poll-results',
   templateUrl: './poll-results.component.html',
@@ -26,12 +26,10 @@ export class PollResultsComponent implements DoCheck {
   };
 
   ngDoCheck(): void {
-    this.data = new PollResult(this.poll);
+    this.data = new PollResultChartDataAdapter(this.poll.result);
   }
 
   voteCount(): number {
-    let count = 0;
-    this.poll.results.forEach((result) => (count += result.votes));
-    return count;
+    return this.poll.result.voteCount();
   }
 }

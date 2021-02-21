@@ -12,6 +12,6 @@
         name="option"
       />
       <label  [id]="'poll-answer-'+i+'-lbl'" class="custom-control-label"  [for]="'poll-answer-'+i">{{ option.label }}</label></div>
-    <button id="vote-btn" type="submit" class="btn btn-primary">Vote</button>
+    <button id="vote-btn" [disabled]="noOptionSelected()" type="submit" class="btn btn-primary">Vote</button>
   </form>
 </div>

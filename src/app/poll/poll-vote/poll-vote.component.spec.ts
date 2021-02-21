@@ -43,8 +43,11 @@ describe('Tests for the PollVoteComponent', () => {
         spyOn(component.voteCasted, 'emit');
         const secondInput = findInput('poll-answer-2');
         secondInput.click();
-        button.click();
-        expect(component.voteCasted.emit).toHaveBeenCalledWith(newOption);
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          button.click();
+          expect(component.voteCasted.emit).toHaveBeenCalledWith(newOption);
+        });
       });
     })
   );
@@ -65,11 +68,30 @@ describe('Tests for the PollVoteComponent', () => {
         const thirdInput = findInput('poll-answer-2');
         firstInput.click();
         thirdInput.click();
-        button.click();
-        expect(component.voteCasted.emit).not.toHaveBeenCalledWith(
-          component.poll.options[0]
-        );
-        expect(component.voteCasted.emit).toHaveBeenCalledWith(thirdOption);
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          button.click();
+          expect(component.voteCasted.emit).not.toHaveBeenCalledWith(
+            component.poll.options[0]
+          );
+          expect(component.voteCasted.emit).toHaveBeenCalledWith(thirdOption);
+        });
+      });
+    })
+  );
+
+  it(
+    'should disable vote button if no option is selected',
+    waitForAsync(() => {
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(button.disabled).toBeTrue();
+        const firstInput = findInput('poll-answer-0');
+        firstInput.click();
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+          expect(button.disabled).toBeFalse();
+        });
       });
     })
   );
