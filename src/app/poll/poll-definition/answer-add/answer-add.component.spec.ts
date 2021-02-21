@@ -4,7 +4,7 @@ import { AddAnswerComponent } from './answer-add.component';
 import { FormsModule } from '@angular/forms';
 import { Answer } from '../../answer';
 
-describe('Tests for add option component', () => {
+describe('Tests for AddAnswerComponent', () => {
   let component: AddAnswerComponent;
   let fixture: ComponentFixture<AddAnswerComponent>;
 
@@ -32,8 +32,8 @@ describe('Tests for add option component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should emit an option added event', () => {
-    inputText.value = 'Option name';
+  it('should emit an answer added event', () => {
+    inputText.value = 'answer name';
     inputText.dispatchEvent(new Event('input'));
 
     spyOn(component.answerCreated, 'emit');
@@ -41,12 +41,12 @@ describe('Tests for add option component', () => {
     button.click();
 
     expect(component.answerCreated.emit).toHaveBeenCalledWith(
-      new Answer('Option name')
+      new Answer('answer name')
     );
   });
 
   it(
-    'should reset the text after an option was added',
+    'should reset the text after an answer was added',
     waitForAsync(() => {
       inputText.value = 'Some text';
       inputText.dispatchEvent(new Event('input'));

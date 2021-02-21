@@ -1,6 +1,6 @@
 import { Answer } from './answer';
 import { PollResult, AnswerVote } from './poll-result';
-describe('tests for the PollResult class', () => {
+describe('Tests for the PollResult class', () => {
   let result: PollResult;
 
   beforeEach(() => {
@@ -72,26 +72,35 @@ describe('tests for the PollResult class', () => {
     ]);
   });
 
-  it('should return the votes for an answer', ()=>{
+  it('should return the votes for an answer', () => {
     const firstAnswer = new Answer('1');
     const secondAnswer = new Answer('2');
 
     result.addAnswer(firstAnswer);
     result.addVoteFor(firstAnswer);
     result.addVoteFor(firstAnswer);
+    result.addAnswer(secondAnswer);
 
-    
     expect(result.getVotesFor(firstAnswer)).toEqual(2);
     expect(result.getVotesFor(secondAnswer)).toEqual(0);
-
-    
-
-
   });
 
   it('should throw error when adding vote for non existing answer', () => {
     expect(() => result.addVoteFor(new Answer('1'))).toThrow(
       new Error(`Answer '1' does not exist`)
     );
+  });
+
+  it('should throw error when gettings votes for non existing answer', () => {
+    expect(() => result.getVotesFor(new Answer('1'))).toThrow(
+      new Error(`Answer '1' does not exist`)
+    );
+  });
+
+  it('should do nothing when removing answer that does not exist', ()=>{
+    const answer = new Answer('1');
+    expect(result.hasAnswer(answer)).toBeFalse();
+    result.deleteAnswer(answer);
+    expect(result.hasAnswer(answer)).toBeFalse();
   });
 });

@@ -8,6 +8,9 @@ export class Poll {
   public answers: Answer[] = [];
   public result: PollResult = new PollResult();
 
+  /**
+   * Creates a new instance of Poll. Notice, that it will automatically create two default answers.
+   */
   constructor() {
     this.addAnswer(new Answer('First answer'));
     this.addAnswer(new Answer('Second answer'));

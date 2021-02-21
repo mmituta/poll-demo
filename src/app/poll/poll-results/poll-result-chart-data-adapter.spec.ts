@@ -1,7 +1,7 @@
 import { Answer } from '../answer';
 import { PollResult } from '../poll-result';
 import { PollResultChartDataAdapter } from './poll-result-chart-data-adapter';
-describe('Tests for the PollResultAdapter', () => {
+describe('Tests for the PollResultChartDataAdapter class', () => {
   let result: PollResult;
   beforeEach(() => {
     result = new PollResult();

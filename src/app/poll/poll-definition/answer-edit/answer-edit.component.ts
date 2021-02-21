@@ -8,7 +8,7 @@ import { Answer } from '../../answer';
   selector: 'app-answer-edit',
   templateUrl: './answer-edit.component.html',
 })
-export class EditOptionAnswerComponent {
+export class EditAnswerComponent {
   /**
    * The id of the component. It will be used to generate the ids of component children of this component.
    */

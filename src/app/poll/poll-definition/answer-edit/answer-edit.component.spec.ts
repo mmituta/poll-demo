@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { EditOptionAnswerComponent } from './answer-edit.component';
+import { EditAnswerComponent } from './answer-edit.component';
 import { FormsModule } from '@angular/forms';
 
-describe('Tests for the edit option component', () => {
-  let component: EditOptionAnswerComponent;
-  let fixture: ComponentFixture<EditOptionAnswerComponent>;
+describe('Tests for the EditAnswerComponent', () => {
+  let component: EditAnswerComponent;
+  let fixture: ComponentFixture<EditAnswerComponent>;
 
   let editInput: HTMLInputElement;
   let removeBtn: HTMLButtonElement;
@@ -13,12 +13,12 @@ describe('Tests for the edit option component', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [EditOptionAnswerComponent],
+      declarations: [EditAnswerComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditOptionAnswerComponent);
+    fixture = TestBed.createComponent(EditAnswerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -31,7 +31,7 @@ describe('Tests for the edit option component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should emit an option removed event', () => {
+  it('should emit an answer removed event', () => {
     spyOn(component.answerRemoved, 'emit');
 
     removeBtn.click();
@@ -39,7 +39,7 @@ describe('Tests for the edit option component', () => {
     expect(component.answerRemoved.emit).toHaveBeenCalledWith(component.answer);
   });
 
-  it('should change the name of the option', () => {
+  it('should change the name of the answer', () => {
     component.answer.label = 'original value';
     editInput.value = 'new value';
     editInput.dispatchEvent(new Event('input'));

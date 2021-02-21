@@ -4,7 +4,7 @@ import { Poll } from '../poll';
 
 import { PollDefinitionComponent } from './poll-definition.component';
 
-describe('PollDefinitionComponent', () => {
+describe('Tests for the PollDefinitionComponent', () => {
   let component: PollDefinitionComponent;
   let fixture: ComponentFixture<PollDefinitionComponent>;
 
