@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Poll } from '../poll';
+import { PollDefinition } from '../poll';
 import { Answer } from '../answer';
+import { NullObjectPoll } from '../null-object-poll-definition';
 
 /**
  * Component that is responsible for defining the poll.
@@ -28,7 +29,7 @@ export class PollDefinitionComponent {
    * Instance of poll that will be edited by the component.
    */
   @Input()
-  poll: Poll = new Poll();
+  poll: PollDefinition = new NullObjectPoll();
 
   /**
    * Represents the event of poll reset. The event indicates that the poll should be reseted to it's initial state.
@@ -64,13 +65,13 @@ export class PollDefinitionComponent {
    * Checks if the maximum number of answers has been reached.
    */
   public maxNumberOfAnswersReached(): boolean {
-    return this.poll.answers.length >= this.maxAnswers;
+    return this.poll.answersCount() >= this.maxAnswers;
   }
 
   /**
    * Checks if the minimum number of answers has been reached.
    */
   public minNumberOfAnswersReached(): boolean {
-    return this.poll.answers.length <= this.minAnswers;
+    return this.poll.answersCount() <= this.minAnswers;
   }
 }

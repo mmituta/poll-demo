@@ -39,7 +39,7 @@ describe('Tests for the PollComponent', () => {
 
     component.resetPoll();
     expect(component.poll.title).toEqual('');
-    expect(component.poll.answers).not.toContain(answer);
+    expect(component.poll.getAnswers()).not.toContain(answer);
     expect(component.poll.result.hasAnswer(answer)).toBeFalse();
     expect(component.poll.result.voteCount()).toEqual(0);
   

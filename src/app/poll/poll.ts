@@ -1,12 +1,13 @@
+import { deleteFrom } from '../array-helper';
 import { Answer } from './answer';
-import { PollResult } from './poll-result';
+import { Result } from './result';
 /**
  * Represents a model of the poll.
  */
-export class Poll {
+export class Poll implements PollDefinition {
   public title = '';
-  public answers: Answer[] = [];
-  public result: PollResult = new PollResult();
+  private answers: Answer[] = [];
+  public result: Result = new Result();
 
   /**
    * Creates a new instance of Poll. Notice, that it will automatically create two default answers.
@@ -29,10 +30,17 @@ export class Poll {
    * @param answer poll to be removed. If the poll does not contain specified option, then nothing will happen.
    */
   public deleteAnswer(answer: Answer): void {
-    this.removeFromArray(this.answers, answer);
+    deleteFrom(this.answers, answer);
     this.deleteFromResults(answer);
   }
 
+  public getAnswers(): Answer[] {
+    return this.answers;
+  }
+
+  public answersCount(): number {
+    return this.answers.length;
+  }
   /**
    * Votes for the specified answer. It increases the number of votes that was registered for this answer by one.
    * @param answer that the vote will be casted for.
@@ -45,10 +53,15 @@ export class Poll {
     this.result.deleteAnswer(answer);
   }
 
-  private removeFromArray(array: Answer[], value: Answer): void {
-    const index: number = array.indexOf(value, 0);
-    if (index > -1) {
-      array.splice(index, 1);
-    }
-  }
+}
+
+/**
+ * Defines the properties necessary to define the poll.
+ */
+export interface PollDefinition {
+  title: string;
+  addAnswer(answer: Answer): void;
+  deleteAnswer(answer: Answer): void;
+  answersCount(): number;
+  getAnswers(): Answer[];
 }

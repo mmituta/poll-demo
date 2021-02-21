@@ -72,7 +72,7 @@ describe('Tests for the PollVoteComponent', () => {
         fixture.whenStable().then(() => {
           button.click();
           expect(component.voteCasted.emit).not.toHaveBeenCalledWith(
-            component.poll.answers[0]
+            component.poll.getAnswers()[0]
           );
           expect(component.voteCasted.emit).toHaveBeenCalledWith(thirdOption);
         });
@@ -83,6 +83,7 @@ describe('Tests for the PollVoteComponent', () => {
   it(
     'should disable vote button if no option is selected',
     waitForAsync(() => {
+      component.poll = new Poll();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(button.disabled).toBeTrue();

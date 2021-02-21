@@ -33,7 +33,7 @@ export class PollResultsComponent implements DoCheck {
   /**
    * Updates the chart data with the poll results.
    * The new instances of labels and series array need to be created for the chart component to realize that change occured.
-   * If the same instance of an array was to be used, just with elements that are being changed, 
+   * If the same instance of an array was to be used, just with elements that are being changed,
    * the change detection mechanism would not realize the changes.
    */
   ngDoCheck(): void {

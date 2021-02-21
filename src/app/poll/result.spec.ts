@@ -1,10 +1,10 @@
 import { Answer } from './answer';
-import { PollResult, AnswerVote } from './poll-result';
-describe('Tests for the PollResult class', () => {
-  let result: PollResult;
+import { Result, AnswerVote } from './result';
+describe('Tests for the Result class', () => {
+  let result: Result;
 
   beforeEach(() => {
-    result = new PollResult();
+    result = new Result();
   });
   it('should return 0 vote count if there is no answers to vote for', () => {
     expect(result.voteCount()).toEqual(0);
@@ -97,7 +97,7 @@ describe('Tests for the PollResult class', () => {
     );
   });
 
-  it('should do nothing when removing answer that does not exist', ()=>{
+  it('should do nothing when removing answer that does not exist', () => {
     const answer = new Answer('1');
     expect(result.hasAnswer(answer)).toBeFalse();
     result.deleteAnswer(answer);

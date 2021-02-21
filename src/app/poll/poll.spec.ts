@@ -6,18 +6,18 @@ describe('Tests for the Poll class', () => {
     poll = new Poll();
   });
 
-  it('should create an option with the given text', () => {
-    const option = new Answer('name');
-    poll.addAnswer(option);
+  it('should create an answer with the given text', () => {
+    const answer = new Answer('name');
+    poll.addAnswer(answer);
 
-    expect(poll.answers).toContain(option);
+    expect(poll.getAnswers()).toContain(answer);
   });
 
-  it('should remove the specified option', () => {
-    const option = new Answer('option');
-    poll.addAnswer(option);
-    poll.deleteAnswer(option);
+  it('should remove the specified answer', () => {
+    const answer = new Answer('option');
+    poll.addAnswer(answer);
+    poll.deleteAnswer(answer);
 
-    expect(poll.answers).not.toContain(option);
+    expect(poll.getAnswers()).not.toContain(answer);
   });
 });

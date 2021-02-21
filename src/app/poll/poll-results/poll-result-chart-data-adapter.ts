@@ -1,6 +1,6 @@
 import { IChartistData } from 'chartist';
 import { Poll } from '../poll';
-import { PollResult, AnswerVote } from '../poll-result';
+import { Result, AnswerVote } from '../result';
 
 /**
  * Is responsible for adapting the poll results to the IChartistData type.
@@ -21,7 +21,7 @@ export class PollResultChartDataAdapter implements IChartistData {
    * Creates a new instance of adapter that will adapt the provided PollResult instance.
    * @param poll will be adapter to the IChartistData type.
    */
-  constructor(poll: PollResult) {
+  constructor(poll: Result) {
     const votes: AnswerVote[] = poll.getVotes();
 
     this.series = [votes.map((result) => result.votes)];

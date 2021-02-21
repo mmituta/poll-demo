@@ -1,10 +1,10 @@
 import { Answer } from '../answer';
-import { PollResult } from '../poll-result';
+import { Result } from '../result';
 import { PollResultChartDataAdapter } from './poll-result-chart-data-adapter';
 describe('Tests for the PollResultChartDataAdapter class', () => {
-  let result: PollResult;
+  let result: Result;
   beforeEach(() => {
-    result = new PollResult();
+    result = new Result();
   });
 
   it('should return empty array of labels if results are empty', () => {

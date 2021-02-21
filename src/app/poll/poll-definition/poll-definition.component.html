@@ -14,7 +14,7 @@
   </div>
   <div class="form-group">
     Answers:
-    <div *ngFor="let answer of poll.answers; let i = index">
+    <div *ngFor="let answer of poll.getAnswers(); let i = index">
       <app-answer-edit
         [id]="'answer-'+i"
         [answer]="answer"
@@ -25,7 +25,7 @@
   </div>
   <app-answer-add (answerCreated)="addAnswer($event)" [disabled]="maxNumberOfAnswersReached()"></app-answer-add>
   <div>
-    <span id="answers-count-lbl">{{ poll.answers.length }}/{{ maxAnswers }} possible answers</span>
+    <span id="answers-count-lbl">{{ poll.answersCount() }}/{{ maxAnswers }} possible answers</span>
     <button id="reset-btn" class="btn btn-primary" (click)="reset()">Reset</button>
   </div>
 </div>

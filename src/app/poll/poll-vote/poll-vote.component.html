@@ -1,8 +1,8 @@
 <div class="container">
   <h2>Vote</h2>
   <h3 id="poll-title-voting">{{ poll.title }}</h3>
-  <form (ngSubmit)="onSubmit()">
-    <div class="custom-control custom-radio" *ngFor="let answer of poll.answers; let i = index">
+  <form (ngSubmit)="emitVote()">
+    <div class="custom-control custom-radio" *ngFor="let answer of poll.getAnswers(); let i = index">
       <input
       class="custom-control-input"
         [id]="'poll-answer-'+i"

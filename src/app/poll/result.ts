@@ -1,8 +1,9 @@
 import { Answer } from './answer';
+
 /**
  * Represenst the result of the poll. It contains the information about the votes each of the answers has received.
  */
-export class PollResult {
+export class Result {
   private votes: Map<Answer, number> = new Map();
 
   /**

@@ -18,7 +18,6 @@ export class PollComponent {
   public minAnswers = 2;
 
   poll: Poll = new Poll();
-  constructor() {}
 
   /**
    * Adds a vote for the specified answer.
