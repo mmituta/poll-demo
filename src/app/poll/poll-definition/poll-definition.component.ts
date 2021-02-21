@@ -21,15 +21,19 @@ export class PollDefinitionComponent {
     this.poll.addOption(option);
   }
 
-  public onOptionRemoved(option: Option): void{
+  public onOptionRemoved(option: Option): void {
     this.poll.removeOption(option);
   }
 
-  public reset(): void{
+  public reset(): void {
     this.pollReset.emit();
   }
 
-  public isAddingDisabled(): boolean{
+  public isAddDisabled(): boolean {
     return this.poll.options.length >= this.questionLimit;
+  }
+
+  public isDeleteDisabled(): boolean {
+    return this.poll.options.length <= 2;
   }
 }

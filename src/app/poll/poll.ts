@@ -6,6 +6,11 @@ export class Poll {
   public title = '';
   public options: Option[] = [];
   public results: OptionResultAdapter[] = [];
+
+  constructor() {
+    this.addOption(new Option('First option'));
+    this.addOption(new Option('Second option'));
+  }
   /**
    * Adds an option to the poll.
    * @param option to be added to the poll.
@@ -44,15 +49,13 @@ export class Poll {
   }
 
   public voteFor(option: Option): void {
-    const votedResult = this.results.find(
-      (result) => result.option === option
-    );
+    const votedResult = this.results.find((result) => result.option === option);
     if (votedResult) {
       votedResult.votes++;
     }
   }
 }
-export class OptionResultAdapter  {
+export class OptionResultAdapter {
   public votes = 0;
   constructor(public option: Option) {}
   public get name(): string {

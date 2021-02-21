@@ -2,4 +2,4 @@
 <h3 id="poll-title-result">{{ poll.title }}</h3>
 <x-chartist type="Bar" [data]="data" [options]="options"></x-chartist>
 
-<span>Total votes: {{ voteCount() }}</span>
+<span id="votes-count-lbl">Total votes: {{ voteCount() }}</span>

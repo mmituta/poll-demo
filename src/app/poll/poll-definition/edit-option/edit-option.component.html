@@ -5,5 +5,5 @@
     appLimitedLength
     class="form-control"
     [(ngModel)]="option.label"
-  /><button [id]="id+'-remove-btn'" class="btn btn-primary input-group-append" (click)="removeOption()">X</button>
+  /><button [id]="id+'-remove-btn'" [disabled]="disableDelete" class="btn btn-primary input-group-append" (click)="removeOption()">X</button>
 </div>

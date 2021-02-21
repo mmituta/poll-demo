@@ -12,6 +12,9 @@ export class EditOptionComponent {
   public id: string;
 
   @Input()
+  public disableDelete: boolean;
+
+  @Input()
   public option: Option = new Option('');
   @Output()
   public optionRemoved: EventEmitter<Option> = new EventEmitter();

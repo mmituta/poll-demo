@@ -18,13 +18,14 @@
       <app-edit-option
         [id]="'answer-'+i"
         [option]="option"
+        [disableDelete]="isDeleteDisabled()"
         (optionRemoved)="onOptionRemoved($event)"
       ></app-edit-option>
     </div>
   </div>
-  <app-add-option (optionCreated)="onOptionAdded($event)" [disabled]="isAddingDisabled()"></app-add-option>
+  <app-add-option (optionCreated)="onOptionAdded($event)" [disabled]="isAddDisabled()"></app-add-option>
   <div>
-    {{ poll.options.length }}/{{ questionLimit }} possible answers
+    <span id="answers-count-lbl">{{ poll.options.length }}/{{ questionLimit }} possible answers</span>
     <button id="reset-btn" class="btn btn-primary" (click)="reset()">Reset</button>
   </div>
 </div>
